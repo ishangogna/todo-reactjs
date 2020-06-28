@@ -8,12 +8,21 @@ class App extends Component{
       {id:2,content:'Do some react coding'}
     ]
   }
+  deleteTodo = (id) => {
+    let updatedTodoList = this.state.todos.filter(todo => {
+      return todo.id != id;
+      
+    })
+    this.setState({
+      todos: updatedTodoList,
+    })
+  }
   render(){
     return(
-      <div className = "App">
-        <h1>Hello. This is a todo app.</h1>
+      <div className = "todo-app container">
+       
 
-        <Todos todos = {this.state.todos}/>
+        <Todos deleteTodo = {this.deleteTodo} todos = {this.state.todos}/>
 
         <AddTodos />
       </div>
