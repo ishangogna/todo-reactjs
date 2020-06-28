@@ -16,6 +16,7 @@ class AddTodo extends Component {
         e.preventDefault();
         this.props.addTodo(this.state);
         console.log('value : ' + e.target.value);
+        e.target.reset();
         
     }
     render(){
